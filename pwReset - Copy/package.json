@@ -1,0 +1,18 @@
+{
+  "name": "pwreset",
+  "version": "1.0.0",
+  "description": "new password reset portal and links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ross",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "nunjucks": "^3.2.0",
+    "path": "^0.12.7"
+  }
+}

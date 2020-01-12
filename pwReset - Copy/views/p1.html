@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+                                                    <title>PassWord Reset</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://cdn.enzoic.com/js/enzoic.min.js"></script>
+
+    <form id="signupForm" action="https://cdn.enzoic.com/demosignupsuccess.html" class="offset-4 demo-form pp-container text-center">
+        <fieldset>
+            <legend>Password Reset</legend>
+
+
+            <div id="Netsolus">
+                <h1>
+                    Netsolus
+                </h1>
+            </div>
+
+
+            <div class="container">
+                <div>
+                    <h3>
+                        Hi {username/customer}
+                    </h3>
+                </div>
+                <div>
+                    to coninue, first verify it's you
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <input id="password" class="textLine" type="password" name="password" placeholder="Choose a Password"
+                       enz-enable enz-theme="default" enz-min-password-strength="4"
+                       enz-css-success-class="enz-success" enz-css-fail-class="enz-fail" onkeyup="check();" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="col-md-6">
+                    <input id="confirm_password" class="textLine" type="password" name="confirm_password" placeholder="confirm password" onkeyup="check();" />
+                    <br />
+                    <span id="message"></span>
+                </div>
+
+                <br />
+                <!-- An element to toggle between password visibility -->
+                <div class="subContainer">
+                    <input id="showPW" type="checkbox" onclick="pwFunction(), pwFunction2()">
+                    Show Password
+                </div>
+
+                <br />
+
+                <input onclick="alertFunction()" class="submit" type="submit" value="next" />
+           
+                <span id="resultToast" class="result-toast">
+                    <span class="loader"></span>
+                    <span id="resultToastMsg" class="msg">...</span>
+                </span>
+
+                <br />
+
+                <a href="p2.html">
+                    Forgot password?
+                </a>
+                or
+                <a href="p4.html">
+                    Need to Reset password?
+                </a>
+
+
+</fieldset>
+    </form>
+    <br />
+    </div>
+
+
+
+
+
+
+    <script src="./JS/pwReset.js"></script>
+    <!--
+      Include the password control JS somewhere on your page,
+      then add the enz-enable attribute to your password input element
+    -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./JS/pwMeter.js"></script>
+</body>
+
+
+</html>

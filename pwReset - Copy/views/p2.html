@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="./css/pwMeter.css" rel="stylesheet">
+
+    <title>page 2</title>
+</head>
+<body>
+    <!--
+      Include the password control JS somewhere on your page,
+      then add the enz-enable attribute to your password input element
+    -->
+    <script type="text/javascript" src="https://cdn.enzoic.com/js/enzoic.min.js"></script>
+
+
+
+
+    <h4 class="text-center">
+        Example Signup Form Using Enzoic
+    </h4>
+
+
+    <p class="text-center offset-1">
+        Highlight the "Choose a Password" field to see the Password Strength Meter in action.
+    </p>
+
+
+    <form id="signupForm" action="https://cdn.enzoic.com/demosignupsuccess.html" class="offset-4 demo-form pp-container text-center">
+
+
+        <fieldset>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" placeholder="Your Email Address" />
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- to add Enzoic to this input, add the enz-enable attribute to the markup -->
+                    <input type="password" name="password" placeholder="Choose a Password"
+                           enz-enable enz-theme="default" enz-min-password-strength="4"
+                           enz-css-success-class="enz-success" enz-css-fail-class="enz-fail" />
+
+                </div>
+
+                <div class="col-md-6">
+                    <input type="password" placeholder="Confirm Password" />
+                </div>
+            </div>
+
+
+
+            <div class="btn-group text-center">
+                <button type="submit" class="btn btn-md btn-primary">Test Submit</button>
+                <p class="offset-1 small">
+                    This is an example to show the Password Strength Meter in action.<br />You're not signing up for an account.
+                </p>
+            </div>
+            <div id="resultToast" class="result-toast">
+                <span class="loader"></span>
+                <span id="resultToastMsg" class="msg">...</span>
+            </div>
+        </fieldset>
+    </form>
+
+    <script type="text/javascript" src="./JS/pwMeter.js"></script>
+</body>
+</html>
