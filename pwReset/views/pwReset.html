@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!--<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
+    <!--<link href="css/main.css" rel="stylesheet">-->
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+
+    <title>PassWord Reset</title>
+</head>
+
+
+
+
+<body>
+    <form id="signupForm" action="https://cdn.enzoic.com/demosignupsuccess.html" class="offset-4 demo-form pp-container text-center">
+        <fieldset>
+            <legend>
+                Password Reset
+            </legend>
+            <div id="Netsolus">
+                <h1>
+                    Netsolus
+                </h1>
+            </div>
+
+            <div class="container">
+                <div>
+                    <h3>
+                        Hi {username/customer}
+                    </h3>
+                </div>
+                <div>
+                    to continue, first verify it's you
+                </div>
+
+                <input id="password" class="textLine" type="password" name="password" placeholder="Choose a Password"
+                       enz-enable enz-theme="default" enz-min-password-strength="4"
+                       enz-css-success-class="enz-success" enz-css-fail-class="enz-fail" onkeyup="check();" />
+                <div class="col-md-6">
+                    <input id="confirm_password" class="textLine" type="password" name="confirm_password" placeholder="confirm password" onkeyup="check();" />
+                    <br />
+                    <span id="message">
+                    </span>
+                </div>
+
+                <!--<br />-->
+                <!-- An element to toggle between password visibility -->
+
+                <button class="subContainer" id="showPW" type="button" onclick="pwFunction(), pwFunction2()">
+                    Show Password
+                </button>
+                <img src="data:image/png;base64,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" />
+                <br />
+                <input onclick="location.href = 'pwSetUp.html'" type="button" class="button_active" value="BACK" />
+                <input onclick="alertFunction()" class="submit" type="submit" value="NEXT" />
+                <br />
+                <span id="resultToast" class="result-toast">
+                    <span class="loader"></span>
+                    <span id="resultToastMsg" class="msg">
+                        ...
+                    </span>
+                </span>
+                <br />
+                <a href="pwSetUp.html">
+                    Forgot password?
+                </a>
+                or
+                <a href="authSetUp.html">
+                    Need to Reset password?
+                </a>
+            </div>
+
+        </fieldset>
+    </form>
+    <br />
+
+
+
+
+    <!-- Reset Password - Options =================================================================================================================================-->
+    <div class="border border-secondary rounded p-5 text-center ns-modal-hidden" id="password-options">
+        <h2>
+            <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+            <br />
+            <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+        </h2>
+        <h5 class="mt-2 mb-4">
+            <br />
+            <br />
+            How do you want to reset the password?
+        </h5>
+        <div class="ns-modal-form px-1">
+            <div class="ns-modal-selection form-check text-left mb-4">
+                <input class="form-check-input ns-input-acct-update" type="radio" name="exampleRadios" id="rad-current-pw" value="option1">
+                <label class="form-check-label" for="rad-current-pw">
+                    Enter the current account password
+                </label>
+                <div class="ns-modal-input reveal-if-active">
+                    <input type="password" class="form-control border border-dark ns-primary-input" id="reset-auth-pass" aria-describedby="passwordHelp" placeholder="Verify password">
+                    <inline class="ns-pass-toggle rounded">
+                        <i class="far fa-eye-slash fa-2x text-secondary">
+                        </i>
+                    </inline>
+                    <div class="small text-danger text-left mt-1 ml-1 d-none" id="warn-wrong-current">
+                        <i class="fas fa-exclamation-circle mr-2">
+                        </i>
+                        Invalid password. Try again or use other options.
+                    </div>
+                </div>
+            </div>
+            <div class="ns-modal-selection form-check text-left">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="rad-sms" value="option2" disabled>
+                <label class="form-check-label" for="rad-sms">
+                    Text a code to this phone number:
+                    <br />
+                </label>
+            </div>
+            <h6 class="mt-1 mb-1 ml-4 d-none bg-light rounded" id="pw-options-phone">
+                XXX-XXX-X
+                <strong id="text-sms-three">
+                    980
+                </strong>
+            </h6>
+            <div class="p-2 pl-3 mt-1 mb-3 small text-left" style="background-color: #FF000033;" id="pw-options-disabled">
+                <i>
+                    To enable SMS password reset, please add a phone number to your Netsolus helpdesk account.
+                </i>
+            </div>
+            <div class="ns-modal-selection form-check text-left mt-4">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="rad-new-ticket" value="option3">
+                <label class="form-check-label" for="rad-new-ticket">
+                    Start an account recovery ticket
+                </label>
+            </div>
+            <div class="ns-modal-input text-right mb-0 mt-5">
+                <button class="btn btn-dark ns-primary-btn ns-btn-enter ns-btn-nav">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Moved to top of <header> -->
+    <!-- <h1 class="my-0">
+      <div class="menu-dimmer" id="menuDimmer"></div>
+    </h1> -->
+
+
+    <div class="page-content">
+    </div>
+
+
+    <!-- MODALS AND OVERLAYS -->
+    <!-- Account overlay -->
+    <a class="ns-account rounded px-1" href="index.html" onmouseover="">
+        <i class="fas fa-user-alt"></i> <inline>email@email.com</inline>
+    </a>
+
+    <!-- Data loading animation overlay -->
+    <div class="ns-modal-loading">
+        <div class="ns-modal-loading-front">
+        </div>
+        <div class="ns-modal-loading-back">
+        </div>
+    </div>
+
+    <!-- Password expired popup -->
+    <div class="modal fade" id="modal-pass-expired" tabindex="-1" role="dialog" aria-labelledby="passwordExpired" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Password Expired (<strong id="expired-acct"></strong>)</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                    <!-- <span aria-hidden="true">&times;</span> -->
+                    <!-- </button> -->
+                </div>
+                <div class="modal-body">
+                    This account password has expired as scheduled. Please reset the password.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- General-use popup -->
+    <div class="modal fade" id="modal-general" tabindex="-1" role="dialog" aria-labelledby="generalModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><inline id="modal-general-title"></inline></h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                    <!-- <span aria-hidden="true">&times;</span> -->
+                    <!-- </button> -->
+                </div>
+                <div class="modal-body">
+                    <inline id="modal-general-body"></inline>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="JS/importHTML.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="JS/jqueryPlugins.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="JS/aos.js"></script>
+    <script src="JS/ekko-lightbox.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/animatedLoading.js"></script>
+
+
+
+
+
+    <script src="./JS/pwReset.js"></script>
+    <script type="text/javascript" src="https://cdn.enzoic.com/js/enzoic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./JS/pwMeter.js"></script>
+</body>
+
+
+</html>

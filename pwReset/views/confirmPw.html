@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <link rel="stylesheet" type="text/css" href="./css/p3.css">
+    <link rel="stylesheet" type="text/css" href="./css/grid.css">
+    <!--<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <title>page 3</title>
+</head>
+<body>
+    <h1>Test p3</h1>
+
+
+    <fieldset>
+        <legend>
+            confirm password
+            </legend>
+
+    <div class=" continer">
+        <div class="row">
+            to coninue, first verify it's you
+            </div>
+    <div class="row">
+        <input id="password" class="textLine" type="password" name="password" placeholder="Choose a Password"
+            enz-enable enz-theme="default" enz-min-password-strength="4"
+                enz-css-success-class="enz-success" enz-css-fail-class="enz-fail" onkeyup="check();" />
+                </div>
+    <div class="row">
+        <div class="col-md-6">
+            <input id="confirm_password" class="textLine" type="password" name="confirm_password" placeholder="confirm password" onkeyup="check();" />
+            <br />
+                <span id="message">
+                </span>
+                </div>
+                </div>
+       
+            <!-- An element to toggle between password visibility -->
+            <div class="row">
+                <button class="subContainer" id="showPW" type="button" onclick="pwFunction(), pwFunction2()">
+                    Show Password
+                    </button>
+                    </div>
+            <input onclick="location.href = 'pwSetUp.html'" type="button" class="button_active" value="BACK" />
+                <input onclick="alertFunction()" class="submit" type="submit" value="NEXT" />
+                </div>
+    </fieldset>
+
+
+
+
+
+
+    <script src="./JS/pwReset.js"></script>
+    <!--
+      Include the password control JS somewhere on your page,
+      then add the enz-enable attribute to your password input element
+    -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./JS/pwMeter.js"></script>
+</body>
+</html>

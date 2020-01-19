@@ -1,0 +1,600 @@
+@import "bootstrapOverrides.css";
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/*Header Style*/
+header {
+  background: url("../images/landing.jpg") no-repeat center center;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background-size: cover;
+  background-color: #DDDDDD;
+}
+
+.ns-header {
+  background-image: none !important;
+  position: relative;
+  height: 0px !important;
+  min-height: 0px !important;
+  background-size: auto !important;
+  background-color: #DDDDDD;
+}
+
+/* MSP page special header */
+/* BREAKPOINT: AFTER Medium */
+@media (min-width: 992px) {
+  .ns-msp-head {
+    font-size: 5rem;
+  }
+}
+/* BREAKPOINT: THRU Medium */
+@media (max-width: 992px) {
+  .ns-msp-head {
+    font-size: 4rem;
+  }
+}
+/* BREAKPOINT: THRU Small */
+@media (max-width: 767px) {
+  .ns-msp-head {
+    font-size: 3.2rem;
+  }
+}
+/* BREAKPOINT: THRU XSmall */
+@media (max-width: 575.98px) {
+  .ns-msp-head {
+    font-size: 2.5rem;
+  }
+}
+
+/* MSP page special subheader */
+/* BREAKPOINT: AFTER Medium */
+@media (min-width: 992px) {
+  .ns-msp-subhead {
+    font-size: 2.4rem;
+  }
+}
+/* BREAKPOINT: THRU Medium */
+@media (max-width: 992px) {
+  .ns-msp-subhead {
+    font-size: 2rem;
+  }
+}
+/* BREAKPOINT: THRU Small */
+@media (max-width: 767px) {
+  .ns-msp-subhead {
+    font-size: 1.7rem;
+  }
+}
+/* BREAKPOINT: THRU XSmall */
+@media (max-width: 575.98px) {
+  .ns-msp-subhead {
+    font-size: 1.3rem;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.75);
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:active {
+  color: #000;
+}
+
+.navbar {
+  background-color: #a4e0a900; /*Dark: 1a1a1a00*/
+  transition: all .7s;
+  border-radius: 11px;
+  /* padding-left: 10px; */
+}
+
+/* List of ecosystem pages shown on subpage navbars */
+.ns-eco-bar {
+  background-color: #ffffffee;
+  transition: all .7s;
+  border-radius: 9px;
+}
+
+/* BREAKPOINT: THRU Small */
+/* @media (max-width: 768px) {
+  .ns-eco-bar {
+    width: 22px;
+  }
+} */
+
+.ns-ecosystem {
+  max-height: 300px;
+}
+
+.da-home-page-text {
+  padding-top: 18rem;
+  color: #000;
+}
+
+/* BREAKPOINT: THRU XSmall */
+@media (max-width: 575.98px) {
+  .da-home-page-text {
+    padding-top: 8rem;
+  }
+  .da-home-page-text .display-3 {
+    font-size: 3rem;
+  }
+}
+
+/*Projects Style*/
+.da-projects .da-project-1 {
+  position: relative;
+  min-height: 450px;
+  background-size: cover;
+  background-position: center top;
+  /* background-image: url('/images/custom/oak-tower.png'); */
+}
+
+.da-projects .da-project-2 {
+  position: relative;
+  min-height: 450px;
+  background-size: cover;
+  background-position: left bottom;
+  /* background-image: url('custom/view-from-oak.jpg'); */
+}
+
+
+/* BREAKPOINT: THRU Medium */
+@media (max-width: 992px) {
+  .da-projects .da-project-icon {
+    margin-right: 15px;
+  }
+}
+
+/* Expertise Skills Style */
+.da-expertise .da-exp-skills {
+  padding: 70px 40px 60px 40px;
+}
+
+.da-expertise .progress-bar {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 2s ease-in-out;
+  transition: -webkit-transform 2s ease-in-out;
+  transition: transform 2s ease-in-out;
+  transition: transform 2s ease-in-out, -webkit-transform 2s ease-in-out;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+.da-expertise .aos-animate {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.da-expertise .da-exp-image {
+  background-image: center center;
+  background-size: cover;
+  min-height: 450px;
+}
+
+/*Team Carousel Style*/
+.da-team .carousel-indicators {
+  bottom: 0px;
+}
+
+.da-team .carousel-indicators li {
+  background-color: #3d3f4c;
+}
+
+.da-team .carousel-indicators .active {
+  background-color: #f0f0f0;
+}
+
+/*Image Gallery Style*/
+.da-gallery .card-columns .card {
+  border: none;
+  border-radius: none;
+}
+
+/* BREAKPOINT: THRU Medium */
+@media (max-width: 992px) {
+  .da-gallery .card-columns {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+/* BREAKPOINT: THRU XSmall */
+@media (max-width: 575.98px) {
+  .da-gallery .card-columns {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+
+/* Company Brand Style */
+.da-company-brand img {
+  opacity: 0.6;
+  width: 90%;
+}
+
+.da-company-brand img:hover {
+  opacity: 1;
+}
+
+/*Contact Style*/
+.da-contact {
+  background: url("../images/view-from-oak.jpg") no-repeat center bottom;
+  position: relative;
+  min-height: 700px;
+  background-size: cover;
+  margin-bottom: 100px;
+}
+
+/*Datacenter Background*/
+.ns-dc-animated {
+  background: url("../images/colo3-slow.gif");
+  background-size: 100% 36%;
+}
+.ns-dc-tinted {
+  background-color: #30303060;
+  background-size: 100% 100%;
+}
+
+.contact-bg {
+  background-color: #ffffffdd;
+}
+
+.da-contact .da-contact-detail {
+  padding: 8% 0 8% 1%;
+}
+
+/* BREAKPOINT: THRU Medium */
+@media (max-width: 992px) {
+  .da-contact .da-contact-detail {
+    padding: 15% 0 5% 1%;
+  }
+}
+
+/* BREAKPOINT: THRU Small */
+@media (max-width: 767px) {
+  .da-contact .da-contact-detail {
+    padding: 15px 0px 15px 0px;
+  }
+}
+
+/*Footer*/
+footer .da-social-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer ul li {
+  list-style-type: none;
+}
+
+/* Credit Style */
+a.credit {
+  color: inherit;
+  border-bottom: 1px dashed;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Scroll Top Style*/
+#scrolltop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#scrolltop .btn {
+  border-radius: 50%;
+}
+
+.icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: relative;
+}
+
+/*Client Tools Style*/
+#clienttools {
+  /*Fades in on page load via main.js*/
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+/* Ensure textboxes with red borders also have red shadows */
+input.border-danger:focus {
+  box-shadow: 0px 0px 0px 3px #FF00002D !important;
+}
+
+/*Netsolus Modal Style*/
+.ns-modal, .ns-modal-hidden {
+    /*background-color: #a4e0a9ee;*/
+    background-color: #30b6ba;
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    bottom: 50%;
+    min-width: 340px;
+    max-width: 38%;
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+    transition: visibility 0s, opacity .2s;
+}
+.ns-modal {
+  visibility: visible;
+  opacity: 1;
+}
+.ns-modal-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.ns-modal-input {
+  width: 110%;
+  transform: translate(-4%, 0%);
+}
+.ns-modal-input>input {
+  height: 44px;
+}
+
+/*Netsolus Account Indicator Style*/
+.ns-account {
+  visibility: hidden;
+  opacity: .25;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #2d3237;
+  color: #d9e4da;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  bottom: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition: visibility 0s, opacity .7s;
+}
+/*Cancel Default Hover Effects*/
+.ns-account:hover {
+  color: #d9e4da;
+  text-decoration-line: none;
+}
+
+/*Netsolus Loading Indicator Style*/
+.ns-modal-loading {
+  visibility: hidden;
+  opacity: 1;
+  background-color: #222222fa;
+  border-radius: 9px;
+  position: fixed;
+  z-index: 4;
+  left: 50%;
+  /* bottom: 50%; */
+  width: 356px;
+  height: 32px;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition: visibility 0s, opacity .2s;
+}
+.ns-modal-loading-back {
+  /* background-color: #555555; */
+  border-radius: 6px;
+  width: 0px;
+  /* height: 12px; */
+  position: relative;
+  z-index: 5;
+  /* top: 0%; */
+  /* left: 0px; */
+  /* transform: translate(0%, -175%); */
+}
+.ns-modal-loading-front {
+  /* background-color: #EEEEEE; */
+  border-radius: 6px;
+  width: 0px;
+  /* height: 12px; */
+  position: relative;
+  z-index: 6;
+  /* top: 0%; */
+  /* left: 0px; */
+  /* transform: translate(0%, 0%); */
+}
+
+/*Client Tools Style*/
+#indicate {
+  /*Fades in on page load via main.js*/
+  display: none;
+  position: absolute;
+  bottom: 200px;
+  left: 20px;
+  z-index: 1;
+  color: #69bf00;
+}
+
+.ns-btn {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.ns-btn:hover {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.ns-btn-font {
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+}
+
+.ns-pass-toggle {
+  background-color: #DDDDDD;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-right: 4px;
+  margin-left: 100%;
+  position: fixed;
+  cursor: pointer;
+  transform: translate(-110%, -110%)
+}
+
+/* Service-specific colors */
+.ns-service-dc { color: #FFC03F; }
+.ns-service-iaas { color: #01BEDB; }
+.ns-service-msp { color: #01A95C; }
+.ns-service-security { color: #F95E63; }
+.ns-service-manu { color: #4D5BAE; }
+.ns-service-sms { color: #2061A8; }
+/* cont.'d */
+.ns-bg-dc { background-color: #FFC03F; }
+.ns-bg-iaas { background-color: #01BEDB; }
+.ns-bg-msp { background-color: #01A95C; }
+.ns-bg-security { background-color: #F95E63; }
+.ns-bg-manu { background-color: #4D5BAE; }
+.ns-bg-sms { background-color: #2061A8; }
+
+.ns-nav-text {
+  display:inline-block;
+  padding-top:.3125rem;
+  padding-bottom:.3125rem;
+  margin-right:0rem;
+  font-size:1rem;
+  line-height:2rem;
+  white-space:nowrap
+}
+
+.ns-nav-dropdown {
+  position: absolute !important;
+  text-transform: none !important;
+}
+
+/* BREAKPOINT: THRU Medium */
+@media (max-width: 992px) {
+  .ns-nav-dropdown {
+    /* Keeps the ecosystem dropdown centered to the button */
+    left: -41% !important;
+    width: 182% !important;
+  }
+}
+
+#navToggler:not(.collapsed) > #nav-divider {
+  display: none;
+}
+
+#navToggler.collapsed > #nav-bridge {
+  display: none;
+}
+
+/* BREAKPOINT: THRU Xsmall */
+@media (max-width: 575.98px) {
+  #nav-bridge {
+    visibility: hidden;
+  }
+}
+
+#nav-vert-bridge {
+  height: 230px;
+  margin-bottom: -20px
+}
+
+#menuDimmer {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  opacity: 0;
+  visibility: hidden; /*Hidden by default*/
+  transition: visibility 0s, opacity .7s;
+  cursor: default;
+  z-index: 10;
+}
+
+/*Ensure menu dimmer hides upon transition to lg breakpoint*/
+/* BREAKPOINT: AFTER Medium */
+/* @media (min-width: 992px) {
+  #menuDimmer {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+} */
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+input[type="radio"]:checked ~ .reveal-if-active,
+input[type="checkbox"]:checked ~ .reveal-if-active {
+  opacity: 1;
+  max-height: 100px; /* little bit of a magic number :( */
+  overflow: visible;
+}
+
+
+#password-strength-text {
+  display: none;
+}
+meter {
+  /* Reset the default appearance */
+  display: none;
+  /* -webkit-appearance: none; */
+     -moz-appearance: none;
+          appearance: none;
+
+  margin: 0 auto 2em;
+  width: 95%;
+  height: 0.5em;
+
+  /* Applicable only to Firefox */
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+meter::-webkit-meter-bar {
+  background: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="3"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="4"]::-webkit-meter-optimum-value { background: blue; }
+meter[value="5"]::-webkit-meter-optimum-value { background: green; }
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: orange; }
+meter[value="3"]::-moz-meter-bar { background: yellow; }
+meter[value="4"]::-moz-meter-bar { background: blue; }
+meter[value="5"]::-moz-meter-bar { background: green; }
+
+
+/*Common Style*/
+.da-section {
+  padding: 100px 0;
+}
+
+.da-footer {
+  padding: 100px 0;
+  padding-top: 0;
+}

@@ -1,0 +1,78 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////=================TEST not important =================================
+
+
+
+
+
+//const Express = require("express");
+//const BodyParser = require("body-parser");
+//const Speakeasy = require("speakeasy");
+
+//const qrcode = require('qrcode');
+
+//var app = Express();
+
+//app.use(BodyParser.json());
+//app.use(BodyParser.urlencoded({ extended: true }));
+
+//app.post("/totp-secret", (request, response, next) => {
+//    var secret = Speakeasy.generateSecret({ name: "TEST", length: 20 });
+//    response.send({ "secret": secret.base32 });
+
+//    qrcode.toDataURL(secret.otpauth_url, function (err, data) {
+//        console.log(data)
+//    })
+
+//});
+
+
+
+//// ===============DO NOT USE THIS END POINT IN PRODUCTION JUST FOR TESTING=====
+//app.post("/totp-generate", (request, response, next) => {
+//    response.send({
+//        "token": Speakeasy.totp({
+//             //secret should be coming from the database that is stored with user info
+//            secret: request.body.secret,
+//            encoding: "base32"
+//        }),
+//        "remaining": (30 - Math.floor((new Date().getTime() / 1000.0 % 30)))
+//    });
+//});
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//app.post("/totp-validate", (request, response, next) => {
+//    response.send({
+//        "valid": Speakeasy.totp.verify({
+//            //secret should be coming from the database that is stored with user info
+//            secret: request.body.secret,
+//            encoding: "base32",
+//            //token should be coming from the database that is stored with user info
+//            token: request.body.token,
+//            window: 0
+//        })
+//    })
+//})
+
+
+//app.listen(3000, () => {
+//    console.log("listing at : 3000...");
+//});

@@ -1,0 +1,25 @@
+{
+  "name": "pwreset",
+  "version": "1.0.0",
+  "description": "new password reset portal and links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ross",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "messagebird": "^3.3.0",
+    "nunjucks": "^3.2.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-totp": "0.0.2",
+    "path": "^0.12.7",
+    "qrcode": "^1.4.4",
+    "speakeasy": "^2.0.0"
+  }
+}

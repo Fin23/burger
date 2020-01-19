@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Portal | netsolus KC</title>
+    <meta name="description" content="Netsolus Client Portal" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+</head>
+
+
+<body id="top">
+
+
+    <header>
+        <h1 class="my-0">
+            <div class="menu-dimmer" id="menuDimmer">
+            </div>
+            </h1>
+
+        <!-- =====================================Login - Email==========================================================-->
+        <div class="border border-secondary rounded p-5 text-center ns-modal" id="login-email">
+            <h2>
+                <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+                <br />
+                    <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+                    </h2>
+
+            <h4 class="mt-3 mb-3">
+                Sign in to Client Portal
+                </h4>
+        <div class="ns-modal-form">
+            <div class="ns-modal-input mt-4 pt-1">
+                <input type="email" class="form-control border border-dark ns-primary-input" id="tbox-email" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="small text-danger text-left mt-1 ml-1 d-none" id="warn-no-account">
+                        <i class="fas fa-exclamation-circle mr-2">
+                        </i>
+                            Account does not exist.
+                            </div>
+                            </div>
+            <div class="row text-muted small mt-5 text-left">
+                <i>
+                    For password troubleshooting, click "Next."
+                    </i>
+                    </div>
+            <div class="ns-modal-input text-right mb-0 mt-4">
+                <button class="btn btn-dark ns-btn-nav ns-primary-btn" data-nav-to="#login-password" id="email-btn" disabled>
+                    Next
+                    </button>
+                    </div>
+                    </div>
+                    </div>
+        <!-- =============================================end ================================================================-->
+
+
+        <!--======================================Login - Password ============================================================-->
+        <div class="border border-secondary rounded p-5 text-center ns-modal-hidden" id="login-password">
+            <h2>
+                <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+                <br />
+                    <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+                    </h2>
+                <div class="ns-modal-form">
+                    <div class="ns-modal-input mt-4 pt-5 text-left">
+                        <input type="password" class="form-control border border-dark ns-primary-input" id="login-pass" aria-describedby="passwordHelp" placeholder="Password">
+                        <inline class="ns-pass-toggle rounded">
+                            <i class="far fa-eye-slash fa-2x text-secondary">
+                            </i>
+                            </inline>
+                <div class="small text-danger text-left mt-1 ml-1 d-none" id="warn-wrong-password">
+                    <i class="fas fa-exclamation-circle mr-2">
+                    </i>
+                        Invalid credentials. Try again or reset password below.
+                        </div>
+                <div class="small text-danger text-left mt-2 pb-3 ml-1 d-none" id="warn-lockout">
+                    <i class="far fa-hand-paper mr-2">
+                    </i>
+                        <strong>
+                            A failed login will lock the account.
+                            </strong>
+                            </div>
+                            </div>
+                <div class="ns-modal-input mt-2 d-none" id="section-2fa">
+                    <input type="text" class="form-control border border-dark ns-primary-input" id="tbox-2fa" placeholder="Authentication Code">
+                        <div class="small text-muted text-left mt-1 ml-1">
+                            <i class="fas fa-info-circle mr-2">
+                            </i>
+                                This account requires two-factor authentication. Please enter the code to sign in.
+                                </div>
+                                </div>
+                <div class="row text-muted small mt-4 mb-5 pl-2 text-left">
+                    <a class="ns-btn-nav" data-nav-to="#password-options" href="#" id="nav-pw-reset">
+                        Forgot or need to reset password?
+                        </a>
+                        </div>
+                <div class="ns-modal-input text-right mb-0 mt-4">
+                    <button class="btn btn-dark ns-primary-btn ns-btn-nav" href="#" id="nav-sms-resend">
+                        Resend Code
+                        </button>
+                            <button class="btn btn-dark ns-primary-btn ns-btn-nav" id="submit-pw" disabled>
+                                Sign In
+                                </button>
+                                </div>
+                                </div>
+                                </div>
+        <!-- Clean up main.js, establish a clean formatting, organize, and remove everything that isn't needed!! -->
+        <!--========================================= end ===================================================-->
+
+
+        <!-- ====================== To many attempts lock out=============================================================-->
+        <div class="border border-secondary rounded p-5 text-center ns-modal-hidden" id="login-lockout">
+            <h2>
+                <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+                <br />
+                    <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+                    </h2>
+            <h5 class="mt-4 mb-4 text-danger">
+            <br />
+                <i class="fas fa-exclamation-triangle fa-2x mb-2 mt-4">
+                </i>
+                <br />
+                    Too many failed login attempts!
+                    </h5>
+            <div class="mt-3 mb-5 small">
+                <i class="fas fa-info-circle mr-2">
+                </i>
+                    This account has been locked, as a safety measure.
+                    </div>
+            <div class="row text-muted mt-3">
+                <a class="ns-btn-nav mx-auto" data-nav-to="#password-options" href="#">
+                    Reset Password to Unlock
+                    </a>
+                    </div>
+                    </div>
+        <!-- ================================ end ======================================================================================-->
+
+
+        <!-- ========================= Reset Password - Options =========================================================================-->
+        <div class="border border-secondary rounded p-5 text-center ns-modal-hidden" id="password-options">
+            <h2>
+                <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+                <br />
+                    <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+                    </h2>
+            <h5 class="mt-2 mb-4">
+            <br />
+            <br />
+                How do you want to reset the password?
+                </h5>
+        <div class="ns-modal-form px-1">
+            <div class="ns-modal-selection form-check text-left mb-4">
+                <input class="form-check-input ns-input-acct-update" type="radio" name="exampleRadios" id="rad-current-pw" value="option1">
+                    <label class="form-check-label" for="rad-current-pw">
+                        Enter the current account password
+                        </label>
+            <div class="ns-modal-input reveal-if-active">
+                <input type="password" class="form-control border border-dark ns-primary-input" id="reset-auth-pass" aria-describedby="passwordHelp" placeholder="Verify password">
+                    <inline class="ns-pass-toggle rounded">
+                        <i class="far fa-eye-slash fa-2x text-secondary">
+                        </i>
+                        </inline>
+            <div class="small text-danger text-left mt-1 ml-1 d-none" id="warn-wrong-current">
+                <i class="fas fa-exclamation-circle mr-2">
+                </i>
+                    Invalid password. Try again or use other options.
+                    </div>
+                    </div>
+                    </div>
+            <div class="ns-modal-selection form-check text-left">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="rad-sms" value="option2" disabled>
+                    <label class="form-check-label" for="rad-sms">
+                        Text a code to this phone number:
+                        <br />
+                        </label>
+                        </div>
+                <h6 class="mt-1 mb-1 ml-4 d-none bg-light rounded" id="pw-options-phone">
+                    XXX-XXX-X
+                        <strong id="text-sms-three">
+                            980
+                            </strong>
+                            </h6>
+            <div class="p-2 pl-3 mt-1 mb-3 small text-left" style="background-color: #FF000033;" id="pw-options-disabled">
+                <i>
+                    To enable SMS password reset, please add a phone number to your Netsolus helpdesk account.
+                    </i>
+                    </div>
+            <div class="ns-modal-selection form-check text-left mt-4">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="rad-new-ticket" value="option3">
+                    <label class="form-check-label" for="rad-new-ticket">
+                        Start an account recovery ticket
+                        </label>
+                        </div>
+            <div class="ns-modal-input text-right mb-0 mt-5">
+                <button class="btn btn-dark ns-primary-btn ns-btn-enter ns-btn-nav">
+                    Continue
+                    </button>
+                    </div>
+                    </div>
+                    </div>
+
+        <!-- ======================== end  =======================================================================================-->
+
+
+
+        <!-- ==================================== SMS Verify ========================================================================-->
+        <div class="border border-secondary rounded p-5 text-center ns-modal-hidden" id="password-option-sms">
+            <h2>
+                <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+                <br />
+                    <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+                    </h2>
+            <h5 class="mt-2 mb-4">
+                <br />
+                <br />
+                    A code has been sent.
+                    <br />
+                        Please enter below:
+                        </h5>
+            <div class="ns-modal-form">
+                <div class="ns-modal-input mt-4 pt-1">
+                    <input type="text" class="form-control border border-dark ns-primary-input" id="sms-code" aria-describedby="emailHelp" placeholder="SMS Verification Code">
+                        <div class="small text-danger text-left mt-1 ml-1 d-none" id="warn-wrong-code">
+                            <i class="fas fa-exclamation-circle mr-2">
+                            </i>
+                                Incorrect code. Please verify and try again.
+                                <br />
+                                <br />
+                <a class="ns-btn-nav" href="#" id="nav-sms-resend">
+                    Resend the code
+                    </a>
+                    <br />
+                    <br />
+                    </div>
+                        <p class="text-left ml-1 my-1 small text-muted">
+                            <i class="fas fa-info-circle mr-2">
+                            </i>
+                                Enter the code to reset this account password. It has been texted to the phone number on record.
+                                </p>
+                                </div>
+                <div class="ns-modal-input text-right mb-0 mt-5 pt-2">
+                    <button class="btn btn-dark ns-btn-nav ns-primary-btn" id="sms-btn" disabled>
+                        Confirm
+                        </button>
+                        </div>
+                        </div>
+                        </div>
+        <!--=========================================== end ========================================================================-->
+
+
+        <!-- ================================== Reset Password =======================================================================-->
+        <div class="border border-secondary rounded p-5 text-center ns-modal-hidden" id="password-reset">
+            <h2>
+                <img src="images/logo-button.png" class="align-bottom netsolus-brand mr-2">
+                <br />
+                    <img src="images/netsolusLabel.png" class="align-bottom netsolus-brand">
+                    </h2>
+            <h5 class="mt-2 mb-4">
+                <br />
+                <br />
+                    Choose new account password
+                    </h5>
+            <div class="ns-modal-form">
+                <div class="ns-modal-input mt-4 pt-1 text-left">
+                    <input type="password" class="form-control border border-dark ns-primary-input" id="reset-new" aria-describedby="emailHelp" placeholder="New password">
+                        <inline class="ns-pass-toggle rounded">
+                            <i class="far fa-eye-slash fa-2x text-secondary">
+                            </i>
+                            </inline>
+            <div class="small text-left mt-1 ml-1 d-none" style="color: #008000 !important" id="notify-strong-password">
+                <i class="fas fa-check-circle mr-2">
+                </i>
+                    <strong>
+                        Password strength OK
+                        </strong>
+                        </div>
+            <div class="small text-danger text-left mt-1 ml-1 d-none" id="notify-weak-password">
+                <i class="fas fa-times-circle mr-2">
+                </i>
+                    <strong>
+                        Password is too weak
+                        </strong>
+                        </div>
+                <p class="text-left px-2 mt-3 small mb-1" id="password-strength-text">
+                </p>
+                    <meter max="5" id="password-strength-meter">
+                    </meter>
+                    </div>
+                <div class="ns-modal-input mt-4 pt-1 text-left">
+                    <input type="password" class="form-control border border-dark ns-primary-input" id="reset-verify" aria-describedby="emailHelp" placeholder="Re-enter new password">
+                        <inline class="ns-pass-toggle rounded">
+                            <i class="far fa-eye-slash fa-2x text-secondary">
+                            </i>
+                            </inline>
+                    <p class="text-left px-2 mt-3 small mb-1 d-none" style="color: #008000 !important" id="password-match-text">
+                        <i class="fas fa-check-circle mr-2">
+                        </i>
+                            <strong>
+                                Passwords match OK
+                                </strong>
+                                </p>
+                    <p class="text-left px-2 mt-3 small mb-1 text-danger d-none" id="password-mismatch-text">
+                        <i class="fas fa-times-circle mr-2">
+                        </i>
+                            <strong>
+                                Both passwords need to match
+                                </strong>
+                                </p>
+                                </div>
+                <div class="ns-modal-input text-right mb-0 mt-5 pt-2">
+                    <button class="btn btn-dark ns-btn-nav ns-primary-btn" id="reset-btn" disabled>
+                        Reset Password
+                        </button>
+                        </div>
+                        </div>
+                        </div>
+         </header>
+        <!-- ============================================= end ===================================================-->
+
+
+   
+
+    <div class="page-content">
+    </div>
+
+    <!-- MODALS AND OVERLAYS -->
+    <!-- ============================= Account overlay  ========================================-->
+    <a class="ns-account rounded px-1" href="index.html" onmouseover="">
+        <i class="fas fa-user-alt">
+        </i>
+            <inline>
+            <!-- Displays users email -->
+                email@email.com
+                </inline>
+                </a>
+    <!--====================================== end ===========================================-->
+
+
+    <!-- ================Data loading animation overlay ================-->
+    <div class="ns-modal-loading">
+        <div class="ns-modal-loading-front">
+        </div>
+            <div class="ns-modal-loading-back">
+            </div>
+            </div>
+    <!-- ================end ================-->
+
+
+    <!-- ================================================ Password expired popup ========================================-->
+    <div class="modal fade" id="modal-pass-expired" tabindex="-1" role="dialog" aria-labelledby="passwordExpired" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- shows users email between strong tags-->
+                    <h5 class="modal-title">Password Expired (<strong id="expired-acct"></strong>)
+                    </h5>
+                    </div>
+        <div class="modal-body">
+            This account password has expired as scheduled. Please reset the password.
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">
+                        OK
+                        </button>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+    <!--============================================end ===========================================================-->
+
+
+
+    <!--======================================== General-use popup ===============================================-->
+    <div class="modal fade" id="modal-general" tabindex="-1" role="dialog" aria-labelledby="generalModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <inline id="modal-general-title">
+                        </inline>
+                        </h5>
+                        </div>
+        <div class="modal-body">
+            <inline id="modal-general-body">
+            </inline>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">    
+                        OK
+                        </button>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+    <!--======================================== end ==========================================================-->
+
+
+
+    <script type="module" src="JS/importHTML.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="JS/jqueryPlugins.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="JS/aos.js"></script>
+    <script src="JS/ekko-lightbox.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/animatedLoading.js"></script>
+</body>
+</html>

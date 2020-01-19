@@ -1,0 +1,39 @@
+
+
+
+.container {
+   display:inline-block;
+}
+.row {
+  text-align:center;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: solid;
+}
+
+h3 {
+    text-align: center;
+}
+
+button {
+    background-color: darkseagreen;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+input {
+    text-align: center;
+    margin: 15px;
+}
+
+legend {
+    font-size: 32px;
+    padding: 5px;
+}

@@ -1,0 +1,28 @@
+.row {
+    display: inline-block;
+}
+h1 {
+    text-align: center;
+
+}
+h2{
+    text-align:center;
+    border-bottom:solid;
+    
+}
+h3 {
+    text-align: center;
+ 
+}
+button {
+    background-color: darkseagreen;
+    border:none;
+    padding:10px;
+    border-radius:3px;
+}
+
+legend{
+    font-size:32px;
+   
+    padding:5px;
+}
